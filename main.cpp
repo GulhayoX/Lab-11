@@ -1,4 +1,6 @@
 #include <iostream>
+#include <sstream>
+#include <algorithm>
 using namespace std;
 
 void inputMatrix(int matrix[][100], int r, int c) {
@@ -8,6 +10,18 @@ void inputMatrix(int matrix[][100], int r, int c) {
         }
     }
 
+}
+int n_vowels(string s) // for string problem 1
+{
+    int n = 0;
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u')
+        {
+            n++;
+        }
+    }
+    return n;
 }
 int main() {
     // problem 1
@@ -150,9 +164,97 @@ int main() {
     //     cout << endl;
     // }
 
-    // problem 8
+    // problem 1 - Strings
+    // string word;
+    // cin >> word;
+    // cout << n_vowels(word) << ' ' << word.length()-n_vowels(word) << endl;
 
+// problem 2
+    // string word;
+    // cin >> word;
+    // for (int i = word.length(); i!=-1; i--)
+    // {
+    //     cout << word[i];
+    // }
+// problem 3
+    // string p_word;
+    // cin >> p_word;
+    // bool is_palindrome = true;
+    // for (int i = 0; i < p_word.length()/2; i++)
+    // {
+    //     if (p_word[i] != p_word[p_word.length() - 1 - i])
+    //     {
+    //         is_palindrome = false;
+    //     }
+    // }
+    // if (is_palindrome)
+    // {
+    //     cout << "Palindrome";
+    // }
+    // else
+    // {
+    //     cout << "Not palindrome";
+    // }
 
+// problem 4
+    // string word;
+    // cin >> word;
+    // char freq[26] = {0}, max = 0;
+    // int max_freq = 0;
+    // for (char c : word)
+    // {
+    //     freq[c - 'a'] ++;
+    // }
+    // for (int i = 0; i < 26; i++)
+    // {
+    //     if (freq[i] > max_freq)
+    //     {
+    //         max_freq = freq[i];
+    //         max = 'a' + i;
+    //     }
+    // }
+    // cout << max << endl;
 
+    // problem 5
+    // string input;
+    // cin >> input;
+    // bool seen[26] = {false};
+    // string result = "";
+    // for (char c : input) {
+    //     int index = c - 'a';
+    //     if (!seen[index]) {
+    //         seen[index] = true;
+    //         result += c;
+    //     }
+    // }
+    // cout << result << endl;
+
+    // problem 6
+    // string sentence;
+    // getline(cin, sentence);
+    // istringstream iss(sentence);
+    // string word;
+    // string longest = "";
+    // while (iss >> word) {
+    //     if (word.length() > longest.length()) {
+    //         longest = word;
+    //     }
+    // }
+    // cout << longest << endl;
+
+    // problem 7
+    string str1, str2;
+    cin >> str1 >> str2;
+
+    // Sort both strings
+    sort(str1.begin(), str1.end());
+    sort(str2.begin(), str2.end());
+
+    if (str1 == str2) {
+        cout << "Yes" << endl;
+    } else {
+        cout << "No" << endl;
+    }
     return 0;
 }
+
